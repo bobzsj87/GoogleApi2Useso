@@ -1,5 +1,5 @@
 {
-  "name": "Googleapi to useso",
+  "name": "GoogleAPI Replacement for CN Users",
   "version": "1.0",
   "description": "Change googleapis to useso for Chinese users",
   "permissions": ["webRequest", "webRequestBlocking",
@@ -7,6 +7,8 @@
   "background": {
     "scripts": ["background.js"]
   },
-
+  "icons": {  
+    "48": "icon48.png",
+    "128": "icon128.png" },
   "manifest_version": 2
 }
