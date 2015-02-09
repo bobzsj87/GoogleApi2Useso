@@ -1,19 +1,10 @@
 chrome.webRequest.onBeforeRequest.addListener(
-  function(info) {
-    var cancel = {cancel: true};
-    
+  function(info) {    
     if (info.url.indexOf("https://fonts.googleapis.com/") !== -1){
-      return cancel;
+      return {redirectUrl: info.url.replace("fonts.googleapis.com", "d2tsbgstdoao7s.cloudfront.net")};
     }
-
-    var prefix = "https://ajax.googleapis.com/ajax/libs/jquery/";
-    if (info.url.indexOf(prefix) !== -1){
-      var seg = info.url.replace(prefix, "").split("/");
-      if (seg.length != 2) return cancel;
-      var dots = seg[1].split('.');
-      dots[0] += "-" + seg[0];
-
-      return {redirectUrl: "https://upcdn.b0.upaiyun.com/libs/jquery/"+dots.join('.')}; 
+    if (info.url.indexOf("https://ajax.googleapis.com/") !== -1){
+      return {redirectUrl: info.url.replace("ajax.googleapis.com", "dfk9v0sw9lp6g.cloudfront.net")};
     }
 
     return {redirectUrl: info.url.replace("googleapis", "useso")};
