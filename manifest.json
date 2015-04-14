@@ -3,7 +3,7 @@
   "version": "1.0",
   "description": "Change googleapis to useso for Chinese users",
   "permissions": ["webRequest", "webRequestBlocking",
-                  "*://fonts.googleapis.com/*", "*://ajax.googleapis.com/*"],
+                  "*://fonts.googleapis.com/*", "*://ajax.googleapis.com/*", "*://*.cloudfront.net/*"],
   "background": {
     "scripts": ["background.js"]
   },
