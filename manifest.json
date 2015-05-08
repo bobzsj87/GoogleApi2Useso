@@ -1,9 +1,9 @@
 {
   "name": "GoogleAPI Replacement for CN Users",
-  "version": "1.0",
-  "description": "Change googleapis to useso for Chinese users",
+  "version": "1.1",
+  "description": "Change blocked requests",
   "permissions": ["webRequest", "webRequestBlocking",
-                  "*://fonts.googleapis.com/*", "*://ajax.googleapis.com/*", "*://*.cloudfront.net/*"],
+                  "*://fonts.googleapis.com/*", "*://ajax.googleapis.com/*", "*://*.cloudfront.net/*", "*://*.global.ssl.fastly.net/*"],
   "background": {
     "scripts": ["background.js"]
   },

@@ -9,14 +9,17 @@ chrome.webRequest.onBeforeRequest.addListener(
     if (info.url.indexOf("https://dot29u55fapha.cloudfront.net") !== -1){
       return {redirectUrl: info.url.replace("dot29u55fapha.cloudfront.net", "dn-idonethismirror.qbox.me")};
     }
+    if (info.url.indexOf("https://slack.global.ssl.fastly.net") !== -1){
+      return {redirectUrl: info.url.replace("slack.global.ssl.fastly.net", "dn-slackmirror.qbox.me")};
+    }
     return {redirectUrl: info.url.replace("googleapis", "useso")};
   },
   // filters
   {
     urls: [
-       "*://fonts.googleapis.com/*", "*://ajax.googleapis.com/*" , "*://dot29u55fapha.cloudfront.net/*"
+       "*://fonts.googleapis.com/*", "*://ajax.googleapis.com/*" , "*://dot29u55fapha.cloudfront.net/*", "*://slack.global.ssl.fastly.net/*"
     ],
-    types: ["stylesheet", "script"]
+    types: ["stylesheet", "script", "image", "object", "other"]
   },
   // extraInfoSpec
   ["blocking"]);
